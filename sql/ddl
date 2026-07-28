@@ -1,0 +1,48 @@
+CREATE DATABASE org;
+SHOW DATABASES;
+USE org;
+
+CREATE TABLE worker (
+    worker_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(56),
+    last_name VARCHAR(78),
+    salary INT,
+    joining_date DATETIME,
+    department VARCHAR(67)
+);
+
+INSERT INTO worker
+(first_name, last_name, salary, joining_date, department)
+VALUES
+('Monika', 'Arora', 100000, '2020-02-14 09:00:00', 'HR'),
+('Khushi', 'Verma', 700000, '2020-02-15 09:00:00', 'HR');
+
+SELECT * FROM worker;
+CREATE TABLE bonus (
+    worker_ref_id INT,
+    bonus_amount INT,
+    bonus_date DATETIME,
+    FOREIGN KEY (worker_ref_id)
+    REFERENCES worker(worker_id)
+    ON DELETE CASCADE
+);
+
+INSERT INTO bonus
+(worker_ref_id, bonus_amount, bonus_date)
+VALUES
+(1, 5000, '2020-02-16'),
+(2, 6000, '2045-07-16');
+CREATE TABLE title (
+    worker_ref_id INT,
+    worker_title VARCHAR(25),
+    affected_from DATETIME,
+    FOREIGN KEY (worker_ref_id)
+    REFERENCES worker(worker_id)
+    ON DELETE CASCADE
+);
+
+INSERT INTO title
+(worker_ref_id, worker_title, affected_from)
+VALUES
+(1, 'Manager', '2016-02-20 00:00:00'),
+(2, 'Lead', '2016-04-20 00:00:00');
