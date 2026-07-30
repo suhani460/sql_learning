@@ -1,0 +1,14 @@
+create table account (
+id int primary key, 
+name varchar (67) unique , 
+balance INT not null default 0
+);
+
+ INSERT INTO ACCOUNT (ID,NAME ,BALANCE)
+ VALUES (1,'A',2000);
+  
+  insert into account(id,name)
+  value (2 , 'b');
+  drop table account;
+ 
+  select*FROM ACCOUNT;
