@@ -1,0 +1,55 @@
+CREATE DATABASE temp;
+USE temp;
+
+CREATE TABLE Customer (
+    id INT PRIMARY KEY,
+    cname VARCHAR(225),
+    address VARCHAR(778),
+    gender CHAR(6),
+    city VARCHAR(225),
+    pincode INT
+);
+
+SELECT * FROM Customer;
+
+INSERT INTO Customer
+(id, cname, address, gender, city, pincode)
+VALUES
+(2, 'Priya Verma', '45 Park Street', 'Female', 'Kolkata', 700016),
+(3, 'Amit Kumar', '78 Civil Lines', 'Male', 'Jaipur', 302001),
+(4, 'Neha Gupta', '21 Ring Road', 'Female', 'Delhi', 110045);
+
+INSERT INTO CUSTOMER VALUES(1,'CADEHLP',' 67 DELHI','MALE','DELHI', 7970707);
+ INSERT  INTO CUSTOMER (ID ,CNAME)
+ values (9,'BOB');
+ 
+ -- UPDATE 
+ UPDATE CUSTOMER SET ADDRESS = 'MUMBAI', GENDER = 'M' WHERE ID = 9 ;
+ 
+ -- UPDATE MULTIPLE ROWS 
+  SET SQL_SAFE_UPDATES = 0;
+  update CUSTOMER 
+  SET PINCODE  = 110000
+WHERE ID > 0;
+UPDATE CUSTOMER SET PINCODE  = PINCODE + 1 ;
+
+-- DELETE 
+DELETE FROM CUSTOMER;
+delete FROM CUSTOMER WHERE  ID =  1 ;
+
+CREATE TABLE Order_Details (
+    order_id INT,
+    delivery_date DATE,
+    cust_id INT,
+    FOREIGN KEY (cust_id)
+    REFERENCES Customer(id)
+);
+
+INSERT INTO Order_Details
+VALUES (1, '2019-03-11', 2);
+
+SELECT * FROM Customer;
+SELECT * FROM Order_Details;
+
+DROP TABLE Customer;
+
