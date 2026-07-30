@@ -1,0 +1,20 @@
+create table account (
+id int primary key, 
+name varchar (67) unique , 
+balance INT not null default 0
+);
+
+  select*FROM ACCOUNT;
+   -- add new column 
+   alter TABLE ACCOUNT ADD interest float NOT NULL DEFAULT 0 ;
+   
+   -- MODIFY
+   ALter table account add interest  double not null default 0 ;
+    desc account;
+    
+    -- change column - rename the column
+    alter table account change column intrest saving_interest float not null default 0;
+    -- drop column 
+    alter table account drop column saving_interest;
+    -- rename the table a
+    alter table account rename to account_details;
