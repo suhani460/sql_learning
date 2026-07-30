@@ -1,0 +1,11 @@
+create table account (
+id int primary key, 
+name varchar (67) unique , 
+balance INT , 
+constraint ACC_BALALCE_CHK CHECK (BALANCE > 1000)
+
+);
+ INSERT INTO ACCOUNT (ID,NAME ,BALANCE)
+ VALUES (1,'A',2000);
+ 
+  select*FROM ACCOUNT;
