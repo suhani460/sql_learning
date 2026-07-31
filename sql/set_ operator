@@ -1,0 +1,52 @@
+create database  tunu ;
+use tunu;
+
+ create table dept_1(
+ empid int ,
+ name varchar(89),
+ role varchar (67)
+ );
+ insert into dept_1 values
+ (1,'a','engineer'),
+(2,'b','salesman'),
+(3,'c',  'manager'),
+(4,'d', 'salesman'),
+
+(5,'e','engineer');
+ select * from dept_1;
+ 
+ DROP TABLE dept_2;
+  create table dept_2(
+    empid int,
+  name varchar (89),
+  role varchar(78)
+  
+  );
+  
+  INSERT INTO dept_2
+VALUES
+(3,'C','manager'),
+(6,'F','marketing'),
+(7,'G','salesman');
+
+SELECT * FROM dept_1;
+
+SELECT * FROM dept_2;
+-- set operations
+
+-- list out all the employee in the company
+select * from dept_1
+union 
+select * from dept_2;
+
+-- list out all the employess in all departments who work as salesman
+select * from dept_1 where role = 'salesman'
+union 
+select * from dept_2 where role = 'salesman';
+-- list out all the employees work in both  departments 
+-- intersect
+ select dept_1.* from dept_1  inner join dept_2 using (empid);
+ -- list out all the emolloyeess working in dept_1 but not in dept_2.
+ -- minus 
+ select dept_1.* from dept_1  left join dept_2 using(empid)
+ where dept_2.empid is null;
