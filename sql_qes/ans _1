@@ -1,0 +1,20 @@
+ create database employee ;
+ use employee;
+ 
+ create table employee(
+ emp_id int primary key ,
+ emp_name varchar(90),
+ salary int ,
+ depratment varchar(89)
+ );
+ insert into  employee(emp_id,emp_name ,salary,depratment )values
+ (1, 'Rahul Sharma', 45000, 'IT'),
+(2, 'Priya Singh', 52000, 'HR'),
+(3, 'Amit Kumar', 60000, 'Finance'),
+(4, 'Neha Verma', 48000, 'Marketing'),
+(5, 'Rohit Gupta', 55000, 'Sales');
+ select emp_name from employee;
+ 
+ delete  from employee
+ where  emp_id = 3 ;
+  select * from employee;
