@@ -1,0 +1,16 @@
+Part 1 — Practice Challenge: Employee Table
+Problem Statement
+
+Create an Employee table with the following columns:
+
+Column	Data Type	Constraint
+emp_id	INT	PRIMARY KEY
+emp_name	VARCHAR(50)	—
+salary	INT	—
+department	VARCHAR(30)	—
+Tasks
+Insert 5 records into the Employee table.
+Display only the emp_name column.
+Update the salary of one employee.
+Delete one employee from the table.
+Display all records from the table to verify the changes.
